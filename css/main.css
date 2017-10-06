@@ -193,9 +193,58 @@ div.barra{
     padding: 20px 0;
 }
 
+div.logo{
+    width: 80%;
+    float: left;
+}
 
-
-
+div.logo img {
+    width: 100%;
+}
+/**__navegacionprincial__**/
+nav.navegacion-principal{
+    display: none;
+}
+nav.navegacion-principal a:hover{
+    background-color: #fe4918;
+}
+nav.navegacion-principal a{
+    font-size: 1.3em;
+    text-transform: capitalize;
+    font-family: 'Oswald', sans-serif;
+    color: #fff;
+    text-decoration: none;
+    transition: all .6s ease;
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+nav.navegacion-principal a:last-child:hover{
+    color: #fff;
+    border: 2px solid #fff;
+}
+nav.navegacion-principal a:last-child{
+    border: 2px solid #fe4918;
+    color: #fe4918;
+}
+/**__menu_movil__**/
+div.menu-movil{
+    width: 60px;
+    display: block;
+    float: right;
+    text-align: right;
+    margin-top: 12px;
+}
+div.menu-movil:hover{
+    cursor: pointer;
+}
+div.menu-movil span{
+    height: 8px;
+    margin-bottom: 6px;
+    background-color: #fff;
+    display: block;
+}
 @media only screen and (min-width:768px) {
     div.contenido-header{
         padding-top: 10px;
@@ -210,8 +259,26 @@ div.barra{
         margin: 0;
         line-height: 1;
     }
+    div.logo{
+        width: 33%;
+    }
+    nav.navegacion-principal{
+        width: 67%;
+        float: right;
+        text-align: right;
+        display: block;
+    }
+    nav.navegacion-principal a{
+        padding: 10px 10px;
+        display: inline-block;
+        text-align: center;
+        width: auto;
+        margin: 0 10px 0 0;
+    }
+    div.menu-movil{
+        display: none;
+    }
 }
-
 
 /* ==========================================================================
 Helper classes
