@@ -107,8 +107,56 @@ body {
     background-color: #f2f2f2;
     font-family: 'Open Sans', sans-serif;
 }
+.seccion{
+    padding: 30px 0;
+}
+.seccion p{
+    font-size: 1.2em;
+    text-align: center;
+}
 h2{
     font-family: 'Oswald', sans-serif;
+    font-size: 2.4em;
+    text-transform: uppercase;
+    text-align: center;
+}
+h3{
+    font-size: 1.8em;
+    color: #fe4918;
+    font-family: 'PT Sans', sans-serif;
+    margin: 0;
+}
+.button{
+    background-color: #fe4917;
+    padding: 10px 40px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+    text-decoration: none;
+    font-size: 1em;
+    margin-top: 20px;
+    display: inline-block;
+    transition: all .3s ease;
+}
+.button:hover{
+    background-color: #e33000;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.float-right{
+    float: right;
+}
+h2::after{
+    content: '';
+    margin: 0 auto;
+    background-image: url(../img/separador.png);
+    height: 30px;
+    width: 100px;
+    display: block;
 }
 .contenedor{
     width: 97%;
@@ -245,6 +293,202 @@ div.menu-movil span{
     background-color: #fff;
     display: block;
 }
+/*talleres*/
+
+section.programa{
+    position: relative;
+}
+div.contenedor-video{
+    max-width: 100%;
+    overflow-x: hidden;
+}
+div.contenido-programa{
+    position: absolute;
+    top: 0;
+    left:  0;
+    height: 100%;
+    width: 100%;
+}
+div.programa-evento{
+    background-color: rgba(255,255,255,.8);
+    padding: 15px;
+    margin-top: 80px;
+}
+nav.menu-programa{
+    width: 100%;
+    border-bottom: 1px solid #fe4918;
+    padding-bottom: 10px;
+}
+nav.menu-programa a{
+    display: block;
+    text-align: center;
+    color: #000;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+nav.menu-programa a i, 
+div.detalle-evento p i{
+    color: #fe4918;
+    font-size: 1.6em;
+    margin-right: 10px;
+}
+/*detalle evento*/
+
+div.detalle-evento{
+    margin-top: 20px;
+    border-bottom: 1px solid #000;
+    padding: 0 20px;
+}
+div.detalle-evento:nth-child(2){
+    border: none;
+}
+div.detalle-evento p{
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+/*invitados*/
+ul.lista-invitados li{
+    padding: 10px;
+    float: left;
+}
+div.invitado{
+    position: relative;
+    overflow: hidden;
+}
+div.invitado img{
+    max-width: 100%;
+    filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+div.invitado:hover img{
+    filter: grayscale(0);
+    -webkit-filter: grayscale(0);
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}
+div.invitado p{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 15px 10px;
+    margin: 0;
+    background-color: rgba(0,0,0,.55);
+    width: 100%;
+    text-align: left;
+    font-family: 'Oswald', sans-serif;
+    color: #fe4918;
+    text-transform: uppercase;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .6s ease-in-out;
+}
+div.invitado:hover p{
+    bottom: -80px;
+    opacity: 0;
+}
+/*contador*/
+.parallax::before{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    filter: brightness(.8);
+    -webkit-filter: brightness(.8);
+}
+div.contador{
+    position: relative;
+    height: auto;
+}
+div.contador::before{
+    content: '';
+    background-image: url(../img/bg-resumen.jpg);
+}
+ul.resumen-evento{
+    position: relative;
+    padding: 120px 0;
+}
+ul.resumen-evento li{
+    width: 50%;
+    float: left;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+}
+p.numero{
+    color: #fe4918;
+    font-size: 4em;
+    display: block;
+    margin: 0 0 10px;
+    font-family: 'Oswald', sans-serif;
+}
+/* tabla de precios */
+
+ul.lista-precios > li{
+    padding: 10px;
+
+}
+div.tabla-precio:hover{
+    transform: scale(1.1);
+    border: 1px solid #fe4918;
+    background-color: #fff;
+    padding: 40px 0;
+    text-align: center;
+    transition: all .3s ease;
+
+}
+div.tabla-precio{
+    border: 1px solid #e1e1e1;
+    background-color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+div.tabla-precio ul li{
+    font-family: 'PT-Sans', sans-serif;
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #868686;
+    line-height: 26px;
+    text-transform: uppercase;
+}
+div.tabla-precio h3{
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+div.tabla-precio p.numero{
+    color: #000;
+    margin-top: 20px 0
+}
+div.tabla-precio ul li::before{
+    font-family: 'FontAwesome';
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 5px;
+    font-size: 20px;
+    color: green;
+    -webkit-font-smoothing: antialiased;
+    content: '\f00c';
+}
+@media only screen and (min-width:992x){
+    div.programa-evento{
+        width: 50%;
+    }
+}
+@media only screen and (min-width:480px){
+    ul.lista-invitados li{
+        width: 50%;
+    }
+}
 @media only screen and (min-width:768px) {
     div.contenido-header{
         padding-top: 10px;
@@ -277,6 +521,25 @@ div.menu-movil span{
     }
     div.menu-movil{
         display: none;
+    }
+    div.programa-evento{
+        width: 70%;
+    }
+    nav.menu-programa{
+        display: table;
+    }
+    nav.menu-programa a{
+        display: table-cell;
+    }
+    ul.lista-invitados li{        
+        width: 33.33%;
+    }
+    ul.resumen-evento li{
+        width: 25%;
+    }
+    ul.lista-precios > li{
+        float: left;
+        width: 33.33%;
     }
 }
 
