@@ -40,9 +40,7 @@
                 <i class="fa-map-marker fa" aria-hidden="true"></i> Guadalajara, MX
               </p>
             </div>
-            <h1 class="nombre-sitio">
-              GdlWEbCamp
-            </h1>
+            <h1 class="nombre-sitio">GdlWEbCamp</h1>
             <p class="slogan">La mejor conferencia de <span>Diseño Web</span></p>
           </div>
         </div>
@@ -60,7 +58,7 @@
           <span></span>
         </div>
         <nav class="navegacion-principal clearfix">
-          <a href="#">Conferencia</a>
+          <a href="conferencia.html">Conferencia</a>
           <a href="#">Calendario</a>
           <a href="#">Invitados</a>
           <a href="registro.html">Reservaciones</a>
@@ -122,6 +120,74 @@
               </div>
               <a href="#" class="button float-right">Ver Todos</a>
             </div> <!--talleres-->
+            <div class="info-curso ocultar clearfix" id="conferencias">
+              <div class="detalle-evento">
+                <h3>Como ser freelancer</h3>
+                <p>
+                  <i class="fa-clock-o fa" aria-hidden="true"></i>
+                  10:00hrs
+                </p>
+                <p>
+                  <i class="fa-calendar fa" aria-hidden="true"></i>
+                  10 de Dic
+                </p>
+                <p>
+                  <i class="fa-user fa" aria-hidden="true"></i>
+
+                  Lorem Ipsum Dolor Sit 
+                </p>
+              </div>
+              <div class="detalle-evento">
+                <h3>Tecnologías del Futuro</h3>
+                <p>
+                  <i class="fa-clock-o fa" aria-hidden="true"></i>
+                  17:00hrs
+                </p>
+                <p>
+                  <i class="fa-calendar fa" aria-hidden="true"></i>
+                  10 de Dic
+                </p>
+                <p>
+                  <i class="fa-user fa" aria-hidden="true"></i>
+                  Lorem Ipsum Dolor Sit 
+                </p>
+              </div>
+              <a href="#" class="button float-right">Ver Todos</a>
+            </div> <!--talleres-->
+            <div class="info-curso ocultar clearfix" id="seminarios">
+              <div class="detalle-evento">
+                <h3>Diseño UI/UX para móviles</h3>
+                <p>
+                  <i class="fa-clock-o fa" aria-hidden="true"></i>
+                  17:00hrs
+                </p>
+                <p>
+                  <i class="fa-calendar fa" aria-hidden="true"></i>
+                  11 de Dic
+                </p>
+                <p>
+                  <i class="fa-user fa" aria-hidden="true"></i>
+
+                  Lorem Ipsum Dolor Sit 
+                </p>
+              </div>
+              <div class="detalle-evento">
+                <h3>Aprende a programar en una mañana</h3>
+                <p>
+                  <i class="fa-clock-o fa" aria-hidden="true"></i>
+                  10:00hrs
+                </p>
+                <p>
+                  <i class="fa-calendar fa" aria-hidden="true"></i>
+                  11 de Dic
+                </p>
+                <p>
+                  <i class="fa-user fa" aria-hidden="true"></i>
+                  Lorem Ipsum Dolor Sit 
+                </p>
+              </div>
+              <a href="#" class="button float-right">Ver Todos</a>
+            </div> <!--talleres-->
           </div> <!--programa-evento-->
         </div> <!--contenedor-->
       </div><!--contenido programa-->
@@ -171,19 +237,19 @@
       <div class="contenedor">
         <ul class="resumen-evento clearfix">
           <li>
-            <p class="numero">6</p>
+            <p class="numero"></p>
             Invitados
           </li>
           <li>
-            <p class="numero">15</p>
+            <p class="numero"></p>
             Talleres
           </li>
           <li>
-            <p class="numero">3</p>
+            <p class="numero"></p>
             Días
           </li>
           <li>
-            <p class="numero">9</p>
+            <p class="numero"></p>
             Conferencias
           </li>
         </ul>
@@ -283,19 +349,19 @@
       <div class="cuenta-regresiva contenedor">
         <ul class="clearfix">
           <li>
-            <p class="numero">80</p>
+            <p id="dias" class="numero"></p>
             días
           </li>
           <li>
-            <p class="numero">15</p>
+            <p id="horas" class="numero"></p>
             horas
           </li>
           <li>
-            <p class="numero">5</p>
+            <p id="minutos" class="numero"></p>
             minutos
           </li>
           <li>
-            <p class="numero">30</p>
+            <p id="segundos" class="numero"></p>
             segundos
           </li>
         </ul>
@@ -342,8 +408,12 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
     <script src="js/plugins.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/jquery.lettering-0.6.1.min.js"></script>
     <script src="js/main.js"></script>
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuE5M3Rgzeq9SF2rBN1if5wGyVLggyUkE&callback=initMap"
+            async defer></script>
     <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
     <script>
       window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
