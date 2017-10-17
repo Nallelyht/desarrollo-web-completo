@@ -53,102 +53,122 @@ function initMap() {
     //extras
     var camisas = document.getElementById('camisa_evento');
     var etiquetas = document.getElementById('etiquetas');
-    var calcularMontos = function(e){
-      e.preventDefault();
-      if(regalo.value === ''){
-        alert('Debes elegir un regalo');
-        regalo.focus();
-      } else {
+    if(camisas){
+      var calcularMontos = function(e){
+        e.preventDefault();
+        if(regalo.value === ''){
+          alert('Debes elegir un regalo');
+          regalo.focus();
+        } else {
+          var boletosDia = pase_dia.value;
+          var boletos2Dias = pase_dosdias.value;
+          var boletoCompleto = pase_completo.value;
+          var cantCamisas = camisas.value;
+          var cantEtiquetas = etiquetas.value;
+          var totalPagar = (boletosDia * 30) + (boletos2Dias * 45) + (boletoCompleto * 50) + ((cantCamisas * 10) * .93) + (cantEtiquetas * 2);
+          var listadoProductos = [];
+          if(boletosDia >= 1) {
+            listadoProductos.push(boletosDia + ' Pases por día');
+          }
+          if(boletos2Dias >= 1) {
+            listadoProductos.push(boletos2Dias + ' Pases por 2 días');
+          }
+          if(boletoCompleto >= 1) {
+            listadoProductos.push(boletoCompleto + ' Pases Completos');
+          }
+          if(cantCamisas >= 1) {
+            listadoProductos.push(cantCamisas + ' Camisas');
+          }
+          if(cantEtiquetas >= 1) {
+            listadoProductos.push(cantEtiquetas + ' Etiquetas');
+          }
+          resultado.style.display = "block";
+          resultado.innerHTML = '';
+          for( var i = 0; i < listadoProductos.length; i++){
+            resultado.innerHTML+= listadoProductos[i] + '<br/>';
+          }
+          suma.innerHTML = "$ " + totalPagar.toFixed(2);
+
+          console.log(listadoProductos);
+        };
+      };
+      var mostrarDatos = function () {
         var boletosDia = pase_dia.value;
         var boletos2Dias = pase_dosdias.value;
         var boletoCompleto = pase_completo.value;
-        var cantCamisas = camisas.value;
-        var cantEtiquetas = etiquetas.value;
-        var totalPagar = (boletosDia * 30) + (boletos2Dias * 45) + (boletoCompleto * 50) + ((cantCamisas * 10) * .93) + (cantEtiquetas * 2);
-        var listadoProductos = [];
-        if(boletosDia >= 1) {
-          listadoProductos.push(boletosDia + ' Pases por día');
+        var diasElegidos = [];
+        if( boletosDia > 0){
+          diasElegidos.push('viernes');
         }
-        if(boletos2Dias >= 1) {
-          listadoProductos.push(boletos2Dias + ' Pases por 2 días');
+        if( boletos2Dias > 0){
+          diasElegidos.push('viernes', 'sabado');
         }
-        if(boletoCompleto >= 1) {
-          listadoProductos.push(boletoCompleto + ' Pases Completos');
+        if( boletoCompleto > 0){
+          diasElegidos.push('viernes', 'sabado', 'domingo');
         }
-        if(cantCamisas >= 1) {
-          listadoProductos.push(cantCamisas + ' Camisas');
+        for(var i = 0; i < diasElegidos.length; i++){
+          document.getElementById(diasElegidos[i]).style.display = 'block';
         }
-        if(cantEtiquetas >= 1) {
-          listadoProductos.push(cantEtiquetas + ' Etiquetas');
-        }
-        resultado.style.display = "block";
-        resultado.innerHTML = '';
-        for( var i = 0; i < listadoProductos.length; i++){
-          resultado.innerHTML+= listadoProductos[i] + '<br/>';
-        }
-        suma.innerHTML = "$ " + totalPagar.toFixed(2);
-
-        console.log(listadoProductos);
       };
-    };
-    var mostrarDatos = function () {
-      var boletosDia = pase_dia.value;
-      var boletos2Dias = pase_dosdias.value;
-      var boletoCompleto = pase_completo.value;
-      var diasElegidos = [];
-      if( boletosDia > 0){
-        diasElegidos.push('viernes');
-      }
-      if( boletos2Dias > 0){
-        diasElegidos.push('viernes', 'sabado');
-      }
-      if( boletoCompleto > 0){
-        diasElegidos.push('viernes', 'sabado', 'domingo');
-      }
-      for(var i = 0; i < diasElegidos.length; i++){
-        document.getElementById(diasElegidos[i]).style.display = 'block';
-      }
-    };
 
-    var validarNombre = function (){
-      if(this.value == '') {
-        errorDiv.style.display = 'block';
-        errorDiv.innerHTML = 'Este campo es obligatorio';
-        this.style.border = '1px solid red';
-        errorDiv.style.border = '1px solid red';
-      } else {
-        errorDiv.style.display = 'none';
-        this.style.border = '1px solid #ccc';
-      }
-    };
+      var validarNombre = function (){
+        if(this.value == '') {
+          errorDiv.style.display = 'block';
+          errorDiv.innerHTML = 'Este campo es obligatorio';
+          this.style.border = '1px solid red';
+          errorDiv.style.border = '1px solid red';
+        } else {
+          errorDiv.style.display = 'none';
+          this.style.border = '1px solid #ccc';
+        }
+      };
 
-    var validarEmail = function (){
-      if (this.value.indexOf('@') > -1){
-        errorDiv.style.display = 'none';
-        this.style.border = '1px solid #ccc';
-      } else {
-        errorDiv.style.display = 'block';
-        errorDiv.innerHTML = 'Debe tener al menos una @';
-        this.style.border = '1px solid red';
-        errorDiv.style.border = '1px solid red';
+      var validarEmail = function (){
+        if (this.value.indexOf('@') > -1){
+          errorDiv.style.display = 'none';
+          this.style.border = '1px solid #ccc';
+        } else {
+          errorDiv.style.display = 'block';
+          errorDiv.innerHTML = 'Debe tener al menos una @';
+          this.style.border = '1px solid red';
+          errorDiv.style.border = '1px solid red';
+        }
       }
+      calcular.addEventListener('click', calcularMontos);
+      pase_dia.addEventListener('blur', mostrarDatos);
+      pase_dosdias.addEventListener('blur', mostrarDatos);
+      pase_completo.addEventListener('blur', mostrarDatos);
+      nombre.addEventListener('blur', validarNombre);
+      apellido.addEventListener('blur', validarNombre);
+      email.addEventListener('blur', validarNombre);
+      email.addEventListener('blur', validarEmail);
+
     }
-    calcular.addEventListener('click', calcularMontos);
-    pase_dia.addEventListener('blur', mostrarDatos);
-    pase_dosdias.addEventListener('blur', mostrarDatos);
-    pase_completo.addEventListener('blur', mostrarDatos);
-    nombre.addEventListener('blur', validarNombre);
-    apellido.addEventListener('blur', validarNombre);
-    email.addEventListener('blur', validarNombre);
-    email.addEventListener('blur', validarEmail);
-
-
   }); //Dom content loaded
 })();
 
 $(function(){ 
   //lettering 
   $(".nombre-sitio").lettering();
+
+  //menu fijo
+  var windowHeight = $(window).height();
+  var barraAltura= $('.barra').innerHeight();
+
+  $(window).scroll(function(){
+    var scroll = $(window).scrollTop();
+    if(scroll > windowHeight){
+      $('.barra').addClass('fixed');
+      $('body').css({'margin-top': barraAltura + 'px'});
+    } else {
+      $('.barra').removeClass('fixed');
+      $('body').css({'margin-top': '0px'});
+    }
+  });
+  //menu responsive
+  $('.menu-movil').on('click', function(){
+    $('.navegacion-principal').slideToggle();
+  })
 
   //programa conferencias
   $('.programa-evento .info-curso:first').show();
