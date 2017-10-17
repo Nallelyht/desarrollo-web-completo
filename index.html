@@ -411,6 +411,12 @@
     <script src="js/jquery.animateNumber.min.js"></script>
     <script src="js/jquery.countdown.min.js"></script>
     <script src="js/jquery.lettering-0.6.1.min.js"></script>
+    <?php
+$archivo = basename ($_SERVER['PHP_SELF']);
+$pagina = str_replace(".php", "", $archivo);
+if($pagina == 'invitados'|| $pagina == 'index'){
+echo '<script src=}
+?>
     <script src="js/main.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuE5M3Rgzeq9SF2rBN1if5wGyVLggyUkE&callback=initMap"
             async defer></script>

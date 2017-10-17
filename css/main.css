@@ -257,7 +257,13 @@ div.barra{
   background-color: #353535;
   padding: 20px 0;
 }
-
+.fixed {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
 div.logo{
   width: 80%;
   float: left;
@@ -269,6 +275,7 @@ div.logo img {
 /**__navegacionprincial__**/
 nav.navegacion-principal{
   display: none;
+  width: 100%;
 }
 nav.navegacion-principal a:hover{
   background-color: #fe4918;
@@ -284,6 +291,7 @@ nav.navegacion-principal a{
   text-align: center;
   width: 100%;
   margin-bottom: 20px;
+  clear: both;
 }
 nav.navegacion-principal a:last-child:hover{
   color: #fff;
@@ -359,7 +367,7 @@ nav.menu-programa a.activo::after{
   height: 20px;
   width: 30px;
   background-image: url(../img/talleres-flecha.jpg);
-  bottom: -15px;
+  bottom: -14px;
   background-position: center;
   background-repeat: no-repeat;
 }
